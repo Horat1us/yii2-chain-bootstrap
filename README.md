@@ -11,48 +11,47 @@ Previously it was included into horat1us/yii2-base package as
 ## Installation
 Using [packagist.org](https://packagist.org/packages/horat1us/yii2-chain-bootstrap):
 ```bash
-composer require horat1us/yii2-chain-bootstrap:^1.0
+composer require horat1us/yii2-chain-bootstrap:^2.0
 ```
 
 ## Usage
-
-### Implement DI Bootstrap in your package
-```php
-<?php
-
-namespace Package;
-
-use Horat1us\Yii\DI;
-
-class Bootstrap extends DI\Bootstrap
-{
-    public function getDefinitions() : array{
-        return [
-            Package\ConfigInterface::class => Package\Config::class,
-        ];
-    }
-}
-```
 
 ### Append package Bootstrap to your application configuration
 ```php
 <?php
 // config.php
 
-use Package;
+use Horat1us\Yii\Chain;
 
 return [
     'bootstrap' => [
         'package' => [
-            'class' => Package\Bootstrap::class,
-            'definitions' => [
-                // here you can reconfigure config interface
-                // note: another class names can not be configured here
+            'class' => Chain\Bootstrap::class,
+            'chain' => [
+                BootstrapFirst::class,
+                BootstrapSecond::class,
             ],
         ],
     ],
     // ... another application configuration
 ];
+```
+
+### Or implement separate class
+
+```php
+<?php
+// config.php
+
+namespace Package;
+
+use Horat1us\Yii\Chain;
+
+class Bootstrap extends Chain\Bootstrap {
+    public array $chain = [
+        Package\Submodule\Bootstrap::class,
+    ];
+}
 ```
 
 ## License
