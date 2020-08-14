@@ -1,6 +1,4 @@
-<?php
-
-declare(strict_types=1);
+<?php declare(strict_types=1);
 
 namespace Horat1us\Yii\Chain\Tests;
 
@@ -8,10 +6,6 @@ use PHPUnit\Framework\TestCase;
 use Horat1us\Yii\Chain;
 use yii\base;
 
-/**
- * Class BootstrapTest
- * @package Horat1us\Yii\Chain\Tests
- */
 class BootstrapTest extends TestCase
 {
     /** @var base\Application */
@@ -21,7 +15,6 @@ class BootstrapTest extends TestCase
     {
         parent::setUp();
 
-        /** @noinspection PhpUnhandledExceptionInspection */
         $this->app = $this->getMockBuilder(base\Application::class)
             ->disableOriginalConstructor()
             ->getMockForAbstractClass();
@@ -41,7 +34,6 @@ class BootstrapTest extends TestCase
 
     public function testBootstrap(): void
     {
-        /** @noinspection PhpUnhandledExceptionInspection */
         $element = $this->getMockBuilder(base\BootstrapInterface::class)
             ->getMockForAbstractClass();
 
