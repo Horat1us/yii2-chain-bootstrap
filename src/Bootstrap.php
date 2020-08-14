@@ -1,16 +1,10 @@
-<?php
-
-declare(strict_types=1);
+<?php declare(strict_types=1);
 
 namespace Horat1us\Yii\Chain;
 
 use yii\base;
 use yii\di;
 
-/**
- * Class Bootstrap
- * @package Horat1us\Yii\Chain
- */
 class Bootstrap extends base\BaseObject implements base\BootstrapInterface
 {
     /** @var string|array|base\BootstrapInterface reference */
