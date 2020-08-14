@@ -8,8 +8,7 @@ use yii\base;
 
 class BootstrapTest extends TestCase
 {
-    /** @var base\Application */
-    protected $app;
+    protected base\Application $app;
 
     protected function setUp(): void
     {

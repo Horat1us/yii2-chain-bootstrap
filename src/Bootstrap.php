@@ -7,8 +7,8 @@ use yii\di;
 
 class Bootstrap extends base\BaseObject implements base\BootstrapInterface
 {
-    /** @var string|array|base\BootstrapInterface reference */
-    public $chain = [];
+    /** @var array<int, string|array|base\BootstrapInterface> references */
+    public array $chain = [];
 
     public function bootstrap($app): void
     {
