@@ -14,9 +14,7 @@ class BootstrapTest extends TestCase
     {
         parent::setUp();
 
-        $this->app = $this->getMockBuilder(base\Application::class)
-            ->disableOriginalConstructor()
-            ->getMockForAbstractClass();
+        $this->app = $this->createStub(base\Application::class);
     }
 
     public function testInvalidChain(): void
@@ -33,8 +31,7 @@ class BootstrapTest extends TestCase
 
     public function testBootstrap(): void
     {
-        $element = $this->getMockBuilder(base\BootstrapInterface::class)
-            ->getMockForAbstractClass();
+        $element = $this->createMock(base\BootstrapInterface::class);
 
         $element
             ->expects($this->exactly(2))
