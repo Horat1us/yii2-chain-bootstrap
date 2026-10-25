@@ -1,5 +1,5 @@
 # Yii2 Chaining Bootstrap
-[![Build Status](https://travis-ci.org/Horat1us/yii2-chain-bootstrap.svg?branch=master)](https://travis-ci.org/Horat1us/yii2-chain-bootstrap)
+[![Test & Lint](https://github.com/Horat1us/yii2-chain-bootstrap/actions/workflows/php.yml/badge.svg?branch=master)](https://github.com/Horat1us/yii2-chain-bootstrap/actions/workflows/php.yml)
 [![codecov](https://codecov.io/gh/Horat1us/yii2-chain-bootstrap/branch/master/graph/badge.svg)](https://codecov.io/gh/Horat1us/yii2-chain-bootstrap)
 
 This package provides yii2 bootstrap interface implementation that allows chaining few bootstraps
@@ -7,6 +7,8 @@ into one. It may be useful when package includes few bootstraps.
 
 Previously it was included into horat1us/yii2-base package as 
 [BootstrapGroup](https://github.com/Horat1us/yii2-base/blob/1.16.0/src/BootstrapGroup.php).
+
+Compatibility: tested on PHP 8.4, PHP 8.5
 
 ## Installation
 Using [packagist.org](https://packagist.org/packages/horat1us/yii2-chain-bootstrap):
